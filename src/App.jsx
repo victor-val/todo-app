@@ -15,6 +15,7 @@ export function App(){
         setTodos((prevTodos) => {
             return [...prevTodos, {id: uuidv4(), task, completed: false}]
         });
+        todoTaskRef.current.value = null;
     }
     
     return (
