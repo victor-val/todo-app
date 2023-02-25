@@ -10,8 +10,9 @@ export function App(){
         <Fragment>
             <TodoList todos={todos}/>
             <input type="text" placeholder='Nueva tarea'></input>
+            <button>Añadir</button>
+            <button>Borrar</button>
         </Fragment>
-
     )
     
 }
