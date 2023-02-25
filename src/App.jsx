@@ -31,6 +31,9 @@ export function App(){
             <input ref={todoTaskRef} type="text" placeholder='Nueva tarea'></input>
             <button onClick={handleTodoAdd}>Añadir</button>
             <button>Borrar</button>
+            <div>
+                Te quedan {todos.filter((todo) => !todo.completed).length} tareas por hacer
+            </div>
         </Fragment>
     )
     
