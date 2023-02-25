@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useRef} from 'react';
+import React, {Fragment, useState, useRef, useEffect} from 'react';
 import {v4 as uuidv4} from 'uuid';
 import { TodoList } from './TodoList';
 
@@ -7,7 +7,18 @@ export function App(){
         {id: 1, task: 'tarea 1', completed: false}
     ]);
 
-    const todoTaskRef = useRef()
+    const todoTaskRef = useRef();
+
+    useEffect(() => {
+        const storedTodos = JSON.parse(localStorage.getItem('todoApp.todos'));
+        if(storedTodos){
+            setTodos(storedTodos);
+        }
+    },[]);
+
+    useEffect(() => {
+        localStorage.setItem('todoApp.todos', JSON.stringify(todos));
+    }, [todos]);
 
     const toggleTodo = (id) => {
         const newTodos = [...todos];
