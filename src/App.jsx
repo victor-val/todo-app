@@ -12,7 +12,7 @@ export function App(){
     const toggleTodo = (id) => {
         const newTodos = [...todos];
         const todo = newTodos.find((todo) => todo.id === id);
-        todo.completed = true;
+        todo.completed = !todo.completed;
         setTodos(newTodos);
     }
 
